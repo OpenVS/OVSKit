@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'OVSKit_Example' do
+  pod 'OVSKit', :path => '../'
+
+  target 'OVSKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
