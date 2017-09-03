@@ -1,12 +1,10 @@
 use_frameworks!
 platform :ios, '10.3'
+source "https://github.com/OpenVS/OVSKit-Specs.git"
 
 target 'OVSKit_Example' do
-  pod 'OVSKit', :path => '../'
-
+  pod 'OVSKit', '~> 0.0.1'
   target 'OVSKit_Tests' do
     inherit! :search_paths
-
-    
   end
 end
