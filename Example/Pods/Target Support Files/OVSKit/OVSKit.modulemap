@@ -1,0 +1,6 @@
+framework module OVSKit {
+  umbrella header "OVSKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

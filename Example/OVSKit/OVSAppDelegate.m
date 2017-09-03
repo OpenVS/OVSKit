@@ -7,12 +7,25 @@
 //
 
 #import "OVSAppDelegate.h"
+#include "OVSHelper.h"
+#include "OVSKit.h"
+#include "OVSSecurity.h"
 
 @implementation OVSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+	NSString * appName = [[OVSHelper sharedInstance] getAppName];
+	NSLog(@"appName:%@", appName);
+	
+	
+	[[OVSDataManager sharedInstance] setGeneralKeyPair:@"$LUId&49jQVg]i(swJQGuP)$D7%tpx$0" iv:@"a6q%l&H%t&fQbd*X"];
+	[OVSKit setAppKey:@"SomeAppKey"];
+	[OVSKit showDeviceInfo];
+	NSString * encryptedText = [OVSSecurity generalKeyForSafeStringFromOriginal:@"Hello World, It is working!"];
+	NSLog(@"Encrypted Text:%@", encryptedText);
+	NSString * decryptedText = [OVSSecurity generalKeyForOriginalStringFromSafeString:encryptedText];
+	NSLog(@"Original Text:%@", decryptedText);
     return YES;
 }
 
