@@ -11,7 +11,7 @@ s.license          = { :type => 'Customized', :text => 'https://www.openvs.org/l
 s.author           = { 'OpenVS Team' => 'developer@thetopai.com' }
 s.source           = { :git => 'https://github.com/OpenVS/OVSKit.git', :tag => s.version.to_s }
 s.ios.deployment_target = '10.3'
-s.source_files = 'OVSKit/Classes/*'
+s.source_files = 'OVSKit/**/*'
 s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -lz' }
 s.user_target_xcconfig  = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -lz' }
 s.vendored_libraries = "libOVSKit.a"
