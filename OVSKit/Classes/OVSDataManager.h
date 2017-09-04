@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonCryptor.h>
+#import <zlib.h>
 #import "OVSGlobal.h"
 
 @interface OVSDataManager : NSObject
