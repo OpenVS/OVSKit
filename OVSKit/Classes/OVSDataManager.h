@@ -7,17 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonDigest.h>
-#import <CommonCrypto/CommonCryptor.h>
-#import <zlib.h>
 #import "OVSGlobal.h"
 
-@interface OVSDataManager : NSObject
+#define OPENVS_KIT_VERSION 0.0	//if this is 0.0, that means we are using the test general key and general iv
 
-/// this is the general key which is individual to different app and it is assigned from the individual app.
-@property(nonatomic, nullable, strong) NSString * generalAES_Key;
-/// this is the general iv which is individual to different app and it is assigend from the individual app.
-@property(nonatomic, nullable, strong) NSString * generalAES_IV;
+@interface OVSDataManager : NSObject
 
 ///this is the key which is different from individual device and it is generated in the app when the app first installed.
 @property (nonatomic, nullable, strong) NSString * deviceAES_Key;
@@ -101,6 +95,9 @@
  */
 -(void)updateDeviceKeyAndIV;
 
+
+///this is a function to load the preset general key and iv, it is different from the version of OVSKit to make it secure. normally, as a developer, you don't need to call this function. the OVSDataManager will automatically call it. you can set the general key pair youself as well.
+-(void)loadDefaultGeneralKeyIV;
 
 ///every time when we try to use this class, we need to call this loadGeneralKeyIv function.
 -(void)setGeneralKeyPair:(NSString *_Nullable)key iv:(NSString *_Nullable)iv;
@@ -253,4 +250,7 @@
  @return the original text
  */
 -(NSString *_Nonnull)generalKeyPairDecryptionForText:(nullable NSString *)encryptedText;
+
+/// get ovs kit version for security purpose
+-(float)getOpenVSKitVersion;
 @end

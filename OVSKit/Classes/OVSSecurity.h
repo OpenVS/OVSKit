@@ -70,14 +70,4 @@
  */
 +(NSData * _Nonnull)toOriginalDataByGeneralKey:(NSData * _Nonnull)safeData;
 
-
-
-/// get general key for data safe transmission
-+(NSString * _Nonnull)getOpenVSKitGeneralKey;
-
-/// get general iv for data safe transmission
-+(NSString * _Nonnull)getOpenVSKitGeneralIV;
-
-/// get ovs kit version for security purpose
-+(float)getOpenVSKitVersion;
 @end

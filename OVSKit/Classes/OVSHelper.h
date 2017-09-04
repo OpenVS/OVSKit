@@ -36,6 +36,7 @@ typedef NS_ENUM(NSUInteger, OVSCurrencySymbol) {
 
 -(NSData *_Nullable)dataFromJSONObject:(NSDictionary *_Nonnull)object;
 -(NSDictionary *_Nullable)objectFromJSONData:(NSData *_Nonnull)data;
+-(NSArray * _Nullable)arrayFromJSONData:(NSData * _Nonnull)data;
 
 -(NSString *_Nonnull)generateUUID;
 -(NSString *_Nonnull)getDeviceModel;
