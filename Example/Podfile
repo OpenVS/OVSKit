@@ -3,7 +3,7 @@ platform :ios, '10.0'
 source "https://github.com/OpenVS/OVSKit-Specs.git"
 
 target 'OVSKit_Example' do
-  pod 'OVSKit', '~> 0.0.1'
+	pod 'OVSKit', :path => '../'
   target 'OVSKit_Tests' do
     inherit! :search_paths
   end

@@ -16,9 +16,9 @@
     "tag": "0.0.1"
   },
   "platforms": {
-    "ios": "10.3"
+    "ios": "10.0"
   },
-  "source_files": "OVSKit/Classes/*",
+  "source_files": "OVSKit/**/*",
   "pod_target_xcconfig": {
     "OTHER_LDFLAGS": "$(inherited) -ObjC -lz"
   },
