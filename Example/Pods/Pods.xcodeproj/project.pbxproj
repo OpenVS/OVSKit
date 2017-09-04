@@ -39,8 +39,8 @@
 		FCE678831F5DD21700BAD2A4 /* OVSThemeCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE6786A1F5DD21700BAD2A4 /* OVSThemeCodes.h */; };
 		FCE678841F5DD21700BAD2A4 /* OVSThemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE6786B1F5DD21700BAD2A4 /* OVSThemeManager.h */; };
 		FCE678851F5DD21700BAD2A4 /* OVSThemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE6786B1F5DD21700BAD2A4 /* OVSThemeManager.h */; };
-		FCE6788A1F5DD43800BAD2A4 /* libOVSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE678891F5DD43800BAD2A4 /* libOVSKit.a */; };
-		FCE6788B1F5DD43800BAD2A4 /* libOVSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE678891F5DD43800BAD2A4 /* libOVSKit.a */; };
+		FCE678941F5DD8E800BAD2A4 /* libOVSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE678931F5DD8E800BAD2A4 /* libOVSKit.a */; };
+		FCE678951F5DD8E800BAD2A4 /* libOVSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE678931F5DD8E800BAD2A4 /* libOVSKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +82,7 @@
 		FCE678691F5DD21700BAD2A4 /* OVSSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVSSecurity.h; sourceTree = "<group>"; };
 		FCE6786A1F5DD21700BAD2A4 /* OVSThemeCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVSThemeCodes.h; sourceTree = "<group>"; };
 		FCE6786B1F5DD21700BAD2A4 /* OVSThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVSThemeManager.h; sourceTree = "<group>"; };
-		FCE678891F5DD43800BAD2A4 /* libOVSKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOVSKit.a; sourceTree = "<group>"; };
+		FCE678931F5DD8E800BAD2A4 /* libOVSKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOVSKit.a; sourceTree = "<group>"; };
 		FD7010508B1C291CA226EAEE2399E587 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31F3866C0A3E9AB0011C6CD8DA99D446 /* Foundation.framework in Frameworks */,
-				FCE6788A1F5DD43800BAD2A4 /* libOVSKit.a in Frameworks */,
+				FCE678941F5DD8E800BAD2A4 /* libOVSKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F355B4B0BD9B89207BC69FDFC2ACA639 /* Foundation.framework in Frameworks */,
-				FCE6788B1F5DD43800BAD2A4 /* libOVSKit.a in Frameworks */,
+				FCE678951F5DD8E800BAD2A4 /* libOVSKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 		7D924541FBDE2B6429759DB1E3BC2C01 /* OVSKit */ = {
 			isa = PBXGroup;
 			children = (
-				FCE678891F5DD43800BAD2A4 /* libOVSKit.a */,
+				FCE678931F5DD8E800BAD2A4 /* libOVSKit.a */,
 				FCE6785A1F5DD1DE00BAD2A4 /* Classes */,
 				B5418132693A71FE3D7F04CA6E821E8C /* Frameworks */,
 			);
