@@ -13,8 +13,6 @@
 		31F3866C0A3E9AB0011C6CD8DA99D446 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		63E73680F1A9BB5A18711A1B99A47BC4 /* Pods-OVSKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1AAF6B7E3BC1FB5DC9696B0A01DFD1 /* Pods-OVSKit_Example-dummy.m */; };
 		F355B4B0BD9B89207BC69FDFC2ACA639 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		FCE6785D1F5DD20E00BAD2A4 /* libOVSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE6785C1F5DD20E00BAD2A4 /* libOVSKit.a */; };
-		FCE6785E1F5DD20E00BAD2A4 /* libOVSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE6785C1F5DD20E00BAD2A4 /* libOVSKit.a */; };
 		FCE6786C1F5DD21700BAD2A4 /* OVSConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE6785F1F5DD21700BAD2A4 /* OVSConfig.h */; };
 		FCE6786D1F5DD21700BAD2A4 /* OVSConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE6785F1F5DD21700BAD2A4 /* OVSConfig.h */; };
 		FCE6786E1F5DD21700BAD2A4 /* OVSDataManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE678601F5DD21700BAD2A4 /* OVSDataManager.h */; };
@@ -41,6 +39,8 @@
 		FCE678831F5DD21700BAD2A4 /* OVSThemeCodes.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE6786A1F5DD21700BAD2A4 /* OVSThemeCodes.h */; };
 		FCE678841F5DD21700BAD2A4 /* OVSThemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE6786B1F5DD21700BAD2A4 /* OVSThemeManager.h */; };
 		FCE678851F5DD21700BAD2A4 /* OVSThemeManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FCE6786B1F5DD21700BAD2A4 /* OVSThemeManager.h */; };
+		FCE6788A1F5DD43800BAD2A4 /* libOVSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE678891F5DD43800BAD2A4 /* libOVSKit.a */; };
+		FCE6788B1F5DD43800BAD2A4 /* libOVSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE678891F5DD43800BAD2A4 /* libOVSKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,6 @@
 		E42147D47931B4855775AC9B375DB2F8 /* Pods-OVSKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OVSKit_Tests-dummy.m"; sourceTree = "<group>"; };
 		F88C42E14D36CE12BD0EB58B24F41B3D /* Pods-OVSKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OVSKit_Tests-resources.sh"; sourceTree = "<group>"; };
 		FCE6785B1F5DD1DE00BAD2A4 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		FCE6785C1F5DD20E00BAD2A4 /* libOVSKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOVSKit.a; sourceTree = "<group>"; };
 		FCE6785F1F5DD21700BAD2A4 /* OVSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVSConfig.h; sourceTree = "<group>"; };
 		FCE678601F5DD21700BAD2A4 /* OVSDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVSDataManager.h; sourceTree = "<group>"; };
 		FCE678611F5DD21700BAD2A4 /* OVSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVSDate.h; sourceTree = "<group>"; };
@@ -83,6 +82,7 @@
 		FCE678691F5DD21700BAD2A4 /* OVSSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVSSecurity.h; sourceTree = "<group>"; };
 		FCE6786A1F5DD21700BAD2A4 /* OVSThemeCodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVSThemeCodes.h; sourceTree = "<group>"; };
 		FCE6786B1F5DD21700BAD2A4 /* OVSThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVSThemeManager.h; sourceTree = "<group>"; };
+		FCE678891F5DD43800BAD2A4 /* libOVSKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOVSKit.a; sourceTree = "<group>"; };
 		FD7010508B1C291CA226EAEE2399E587 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31F3866C0A3E9AB0011C6CD8DA99D446 /* Foundation.framework in Frameworks */,
-				FCE6785D1F5DD20E00BAD2A4 /* libOVSKit.a in Frameworks */,
+				FCE6788A1F5DD43800BAD2A4 /* libOVSKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F355B4B0BD9B89207BC69FDFC2ACA639 /* Foundation.framework in Frameworks */,
-				FCE6785E1F5DD20E00BAD2A4 /* libOVSKit.a in Frameworks */,
+				FCE6788B1F5DD43800BAD2A4 /* libOVSKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 		7D924541FBDE2B6429759DB1E3BC2C01 /* OVSKit */ = {
 			isa = PBXGroup;
 			children = (
-				FCE6785C1F5DD20E00BAD2A4 /* libOVSKit.a */,
+				FCE678891F5DD43800BAD2A4 /* libOVSKit.a */,
 				FCE6785A1F5DD1DE00BAD2A4 /* Classes */,
 				B5418132693A71FE3D7F04CA6E821E8C /* Frameworks */,
 			);
@@ -501,7 +501,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-OVSKit_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-OVSKit_Example/Pods-OVSKit_Example.modulemap";
@@ -537,7 +537,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-OVSKit_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-OVSKit_Example/Pods-OVSKit_Example.modulemap";

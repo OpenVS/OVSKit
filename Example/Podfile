@@ -1,5 +1,5 @@
 use_frameworks!
-platform :ios, '10.3'
+platform :ios, '10.0'
 source "https://github.com/OpenVS/OVSKit-Specs.git"
 
 target 'OVSKit_Example' do
