@@ -13,12 +13,14 @@
 		31F3866C0A3E9AB0011C6CD8DA99D446 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		63E73680F1A9BB5A18711A1B99A47BC4 /* Pods-OVSKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1AAF6B7E3BC1FB5DC9696B0A01DFD1 /* Pods-OVSKit_Example-dummy.m */; };
 		F355B4B0BD9B89207BC69FDFC2ACA639 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		FC08FC571F60EB0000B4810F /* libOVSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC08FC561F60EB0000B4810F /* libOVSKit.a */; };
+		FC08FC581F60EB0000B4810F /* libOVSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC08FC561F60EB0000B4810F /* libOVSKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0822CA88C32F100A70E39B52568D2F7F /* Pods-OVSKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OVSKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		109D890D5C8C2D6DB2D628929074E991 /* Pods-OVSKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OVSKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		2ED25307BAEB1491B3C72D5466DC7322 /* Pods-OVSKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-OVSKit_Example.modulemap"; sourceTree = "<group>"; };
+		2ED25307BAEB1491B3C72D5466DC7322 /* Pods-OVSKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-OVSKit_Example.modulemap"; sourceTree = "<group>"; };
 		33E3C8A4989CF8EE3AF00C068DC0F456 /* Pods-OVSKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OVSKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B56A0ED1BA135688F94825FC1852232 /* Pods-OVSKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OVSKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3F43118841C1FFF22DA178A1789B7DC6 /* OVSConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OVSConfig.h; path = OVSKit/Classes/OVSConfig.h; sourceTree = "<group>"; };
@@ -34,10 +36,10 @@
 		71804642FAE414982C51CACA7115C0C0 /* OVSHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OVSHelper.h; path = OVSKit/Classes/OVSHelper.h; sourceTree = "<group>"; };
 		7F3C156887B9E2233BF463162D07DCD3 /* OVSGlobal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OVSGlobal.h; path = OVSKit/Classes/OVSGlobal.h; sourceTree = "<group>"; };
 		8A1AAF6B7E3BC1FB5DC9696B0A01DFD1 /* Pods-OVSKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OVSKit_Example-dummy.m"; sourceTree = "<group>"; };
-		8B0DB674DC5360FA32E446805B8ACC62 /* Pods_OVSKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OVSKit_Example.framework; path = "Pods-OVSKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D44D1EB8E51D661692167261798C4B6 /* Pods_OVSKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OVSKit_Tests.framework; path = "Pods-OVSKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		940E05747CA2DFDCEDB1492A5753B157 /* Pods-OVSKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-OVSKit_Tests.modulemap"; sourceTree = "<group>"; };
+		8B0DB674DC5360FA32E446805B8ACC62 /* Pods_OVSKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OVSKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D44D1EB8E51D661692167261798C4B6 /* Pods_OVSKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OVSKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		940E05747CA2DFDCEDB1492A5753B157 /* Pods-OVSKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-OVSKit_Tests.modulemap"; sourceTree = "<group>"; };
 		A76F86E04D0F24ADC391FCF4AE74781A /* Pods-OVSKit_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OVSKit_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		AA912749E7C95B91C8C51EE48A489106 /* OVSKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OVSKit.h; path = OVSKit/Classes/OVSKit.h; sourceTree = "<group>"; };
 		AC7C1D75309F89A2AEDD6759F74389FC /* Pods-OVSKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OVSKit_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		E42147D47931B4855775AC9B375DB2F8 /* Pods-OVSKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OVSKit_Tests-dummy.m"; sourceTree = "<group>"; };
 		EDF5DE69061D962B25478F4309391907 /* OVSLanguageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OVSLanguageManager.h; path = OVSKit/Classes/OVSLanguageManager.h; sourceTree = "<group>"; };
 		F88C42E14D36CE12BD0EB58B24F41B3D /* Pods-OVSKit_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OVSKit_Tests-resources.sh"; sourceTree = "<group>"; };
+		FC08FC561F60EB0000B4810F /* libOVSKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOVSKit.a; sourceTree = "<group>"; };
 		FD7010508B1C291CA226EAEE2399E587 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31F3866C0A3E9AB0011C6CD8DA99D446 /* Foundation.framework in Frameworks */,
+				FC08FC571F60EB0000B4810F /* libOVSKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F355B4B0BD9B89207BC69FDFC2ACA639 /* Foundation.framework in Frameworks */,
+				FC08FC581F60EB0000B4810F /* libOVSKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,7 @@
 		7D924541FBDE2B6429759DB1E3BC2C01 /* OVSKit */ = {
 			isa = PBXGroup;
 			children = (
+				FC08FC561F60EB0000B4810F /* libOVSKit.a */,
 				3F43118841C1FFF22DA178A1789B7DC6 /* OVSConfig.h */,
 				B85627EF38EE743F781C71FA1D96A755 /* OVSDataManager.h */,
 				B89A08A6796BAF3786A53E681DE0F123 /* OVSDate.h */,
