@@ -35,6 +35,7 @@ typedef NS_ENUM(NSUInteger, OVSCurrencySymbol) {
 -(UIColor *_Nullable)colorWithHexString:(NSString *_Nonnull)stringToConvert alpha:(float)alpha;
 
 -(NSData *_Nullable)dataFromJSONObject:(NSDictionary *_Nonnull)object;
+-(NSData *_Nullable)dataFromJSONArray:(NSArray *_Nonnull)array;
 -(NSMutableDictionary *_Nullable)objectFromJSONData:(NSData *_Nonnull)data;
 -(NSMutableArray * _Nullable)arrayFromJSONData:(NSData * _Nonnull)data;
 
