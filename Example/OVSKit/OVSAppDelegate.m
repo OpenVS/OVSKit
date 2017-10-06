@@ -18,7 +18,6 @@
 	NSString * appName = [[OVSHelper sharedInstance] getAppName];
 	NSLog(@"appName:%@", appName);
 	
-	
 	[[OVSDataManager sharedInstance] setGeneralKeyPair:@"$LUId&49jQVg]i(swJQGuP)$D7%tpx$0" iv:@"a6q%l&H%t&fQbd*X"];
 	[OVSKit setAppKey:@"SomeAppKey"];
 	[OVSKit showDeviceInfo];
@@ -26,6 +25,9 @@
 	NSLog(@"Encrypted Text:%@", encryptedText);
 	NSString * decryptedText = [OVSSecurity generalKeyForOriginalStringFromSafeString:encryptedText];
 	NSLog(@"Original Text:%@", decryptedText);
+    NSData * data = [[OVSHelper sharedInstance] dataFromJSONArray: @[@{@"A":@"B"}, @{@"C":@(2)}]];
+    NSArray * array = [[OVSHelper sharedInstance] arrayFromJSONData:data];
+    NSLog(@"Array from JSON data:%@", array);
     return YES;
 }
 
