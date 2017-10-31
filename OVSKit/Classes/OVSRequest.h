@@ -45,10 +45,10 @@ typedef NS_ENUM(NSInteger, RequestContentType) {
 ///define request task to hold all the request task parameters and callback functions
 typedef void(^UploadingCallback)(NSURLSessionTask * task, NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytesExpected);
 typedef void(^DownloadingCallback)(NSURLSessionTask * task, NSUInteger bytesWritten, NSUInteger totalBytesWritten, NSUInteger totalBytesExpected);
-typedef void(^CompletionCallback)(NSData * data, NSURLResponse * response, NSError * error, NSInteger statusCode, RequestDataSecurity security);
+typedef void(^CompletionCallback)(NSData * data, NSURLResponse * response, NSError * error, NSInteger statusCode, RequestDataSecurity security, NSDictionary * responseHeader);
 typedef BOOL(^RedirectCallback)(NSString * url, NSURLResponse * response, NSURLRequest * newRequest);
-typedef void(^successCallback)(NSInteger statusCode, NSData * responseData);
-typedef void(^errorCallback)(NSInteger statusCode, NSString * message, NSError * error);
+typedef void(^successCallback)(NSInteger statusCode, NSData * responseData, NSDictionary * responseHeader);
+typedef void(^errorCallback)(NSInteger statusCode, NSString * message, NSError * error, NSDictionary * responseHeader);
 
 /**
 	this is used for multipart-form-data parameter
