@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'OVSKit'
-s.version          = '0.0.3'
+s.version          = '0.0.4'
 s.summary          = 'OVSKit offers a bunch of useful functions to facilitate developer work'
 s.description      = <<-DESC
 OVSKit offers a bunch of useful functions to facilitate developer work. Such as Network Request, Encryption/Decryption, Log and so on
