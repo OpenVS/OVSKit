@@ -1,0 +1,6 @@
+.html body {margin:0px; padding:0px;}
+.tabs{width:100%;height:auto;}
+.tabs a{padding:5px;border:1px solid #aaa;text-decoration:none;margin-right:2px;color:#000;}
+.tabContent {width:100%}
+.tabInActive{color:#000;background-color:#fff;}
+.tabActive{color:#000;background-color:#eee;}

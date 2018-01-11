@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>OVSMobileSDK_1.0.0</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="OVSMobileSDK_1.0.1.js"></script>
+
+<style>
+.html body {margin:0px; padding:0px;}
+.tabs{width:100%;height:auto;}
+.tabs a{padding:5px;border:1px solid #aaa;text-decoration:none;margin-right:2px;color:#000;}
+.tabContent {width:100%;}
+.tabInActive{color:#000;background-color:#fff;}
+.tabActive{color:#000;background-color:#eee;}
+</style>
+
+<h1 id="toc_0">OVS Mobile SDK Manual - Version 1.0.0</h1>
+
+<blockquote>
+<p>Note: All API use .ovs file as data source</p>
+</blockquote>
+
+<h2 id="toc_1">Overview</h2>
+
+<p>OVS Mobile SDK Manual is used to show developer how to use OVSKit library for your project to facilitate the process of developing a project between server and mobile application. As we know that, most of the time, when we start to create a mobile application. We are more likely to set up a server to keep the records of the user in the server for later push notification, login or other logic process. Those kind of logic requires a lot of efforts in the server side and the mobile side. Now, OVSKit comes out. It helps you to short the develop process of your app. Without setting up a server, you can simply integrate the OVSKit library to your project and just did some simply configuration, you are going to have the ability to manage your mobile app&#39;s user, push notification, commerial goods management and so on.</p>
+
+<p>We offer OpenVS Platform to manage your mobile app under a double encryption, independent private key/pair data transmission and store secure enviornment. Therefore, you don&#39;t need to worry about your data secure issue. Moreover, we open our server side source code (which is written by java) and mobile app source code (iOS and Android) for the people who want to improve the feature and shorten the development process. Even more exciting, online payment solution are provided in the OVSKit. You can easily do the online purchase feature by using our OVSKit without adding other extra library or security checking. All the available open source code (server code and mobile app ) are forever free and we will maintain it forever as well.</p>
+
+<p>If you want to download the source code of OVSKit, please <a href='#'>create an account</a> here. Then, login to your account and create an application in our web dashboard. After you successfully create an application by using our dashboard. You can download all the source code on the side of the application bar.</p>
+
+<h2 id="toc_2">Get Started</h2>
+
+<h3 id="toc_3">Step 1: Initialize SDK</h3>
+
+<p>When you start to use this SDK. The first thing is to set up the Application Key for your app in your mobile app project. You can get the Application Key from OpenVS Dashboard by open <a href="https://dashboard.openvs.org">https://dashboard.openvs.org</a>. This app key has to be set up first in any situation. When set up the app key, the callback function will nofity you it is a valid app key or not. You don&#39;t need to wait for the callback function to run your app if you know the app key is always a valid app key. If the app key is not valid, your following OVSKit api call will be failed.</p>
+
+<blockquote>
+<p>Note: Even you download the source code (server code, and mobile app code), you still need to set up a valid key. because OVSKit will talk to OpenVS server every time when setAppKey function get called. After that, all the OVSKit api call will point to your server.</p>
+</blockquote>
+
+<div class="code_type_bar" to="get_started_step_1"></div>
+<div class="ios" to="get_started_step_1">
+//set up your app key in the AppDelegate.swift file
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    OVSKit.setAppKey("&lt;your-ovs-app-key&gt;")
+    return true
+}
+</div>
+<div class="android" to="get_started_step_1">
+    Not Available Now
+</div>
+
+<h3 id="toc_4">Step 2: Assign Server URL</h3>
+
+<p>This is an optional step. It is used to define the server url to receive all the API calls. If you download our server code and deploy the server code in your own server. You need to set up the <em>serverURL</em> variable. Otherwise, there is no need to define your own server url. The default server url will be pointed to the https://api.openvs.org. If you have our openvs platform service, just keep default server url. All the API call should works properly. If you meet issues, please go to our discussion section of openvs.org via <a href="https://www.openvs.org/discussion">https://www.openvs.org/discussion</a></p>
+
+<div class="code_type_bar" to="get_started_step_2"></div>
+<div class="ios" to="get_started_step_2">
+//set up your app key in the AppDelegate.swift file
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    OVSKit.setAppKey("&lt;your-ovs-app-key&gt;")
+    OVSKit.setServerURL("http://mylocalserver.com")
+    return true
+}
+</div>
+<div class="android" to="get_started_step_2">
+    Not Available Now
+</div>
+
+<h3 id="toc_5">Step 3: Register Device to Server</h3>
+
+<p>After you finish Step 1 and Step 2. Now, it is the time for you to register your device information to your server. so that. your server can update your device push notification and device id for the furture push notification and other statistic feature. Otherwise, some functions may not work properly in openvs app. We recommend you to put the code in the app active callback function. Because after you successfully register you device to the server. Server will return a configuration for your app based on your Application Settings. This configuration will be loaded the next time the app turns to be active. For you, you don&#39;t need to worry about the configuration. It will be handled by the OVSKit.</p>
+
+<div class="code_type_bar" to="get_started_step_1"></div>
+<div class="ios" to="get_started_step_1">
+//set up your app key in the AppDelegate.swift file
+func applicationDidBecomeActive(_ application: UIApplication) {
+    OVSKit.registerDevice()
+}
+</div>
+<div class="android" to="get_started_step_1">
+    Not Available Now
+</div>
+
+<h3 id="toc_6">Step 4: Use Push Notification</h3>
+
+<p>If you are going to use the push notification in the app by using the OVSKit. you can use the build in function from OVSKit to register the push notification in both Apple And Google notification server. After that, listen to the callback function from Apple and Google server to prepare the device token for OVSKit. Details are as below:</p>
+
+<div class="code_type_bar" to="get_started_step_4"></div>
+<div class="ios" to="get_started_step_4">
+    // need to call registerPushNotification in the place where you want to pop up
+    // push notification permission dialog to register the push notification.
+    // here we put it in the didFinishLaunching delegate function
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        OVSKit.setAppKey("THIS-IS-A-DEV-APP-KEY")
+        OVSKit.registerPushNotification()
+        return true
+    }
+    
+    // implement the delegate in AppDelegate.swift to prepare device token. once a valid
+    // push nontification device token comes back.
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        OVSKit.preparePushNotification(deviceToken)
+    }
+
+</div>
+<div class="android" to="get_started_step_4">
+    Not Available Now
+</div>
+
+<h2 id="toc_7">Quick Features</h2>
+
+<h3 id="toc_8">User Management</h3>
+
+<p>This section shows you the useful apis which allows you provide features to your client. So that they can logout, login and register their accounts. You can enable your user to use either email or phone number to register by config the settings in your web dashboard.</p>
+
+<h4 id="toc_9">▾ Check Username</h4>
+
+<p>this function is used to check the username existed or not. Before you register a user, it is better to check the username is existed or not. If you didn&#39;t and the username is existed, <em>Register User</em> function will be failed and returns you the corresponding message
+<div class="code_type_bar" to="validate_user"></div>
+<div class="ios" to="validate_user">
+    func checkUsername(_ username:String){
+        OVSKit.check(username:username){ (existed, message) in
+            if !existed {
+                labStatus.text = &quot;username is not existed&quot;
+            }else{
+                labstatus.text = &quot;username is existed:&quot; + message
+            }
+        }
+    }
+</div>
+<div class="android" to="validate_user">
+    Not Available Now
+</div></p>
+
+<h4 id="toc_10">▾ Register User</h4>
+
+<p>This function POST a new user object to remote server for registration. 
+<div class="code_type_bar" to="validate_user"></div>
+<div class="ios" to="validate_user">
+    IBAction func clickRegistration(){
+        var newUser:User = User()
+        newUser.firstName = txtFirstName.text
+        newUser.lastName = txtLastName.text
+        newUser.password = txtPassword.text
+        newUser.username = txtUsername.text
+        //if enable phone registration, here need to put the phone code otherwise, put nil for email validation.
+        OVSKit.register(newUser:newUser,withPhoneCode:nil){ (success, message) in
+            if success {
+                labStatus.text = &quot;successfully registerred&quot;
+            }else{
+                labstatus.text = &quot;failed to register, error:&quot; + message
+            }
+        }
+    }
+</div>
+<div class="android" to="validate_user">
+    Not Available Now
+</div></p>
+
+<h4 id="toc_11">▾ User Logout</h4>
+
+<p>If you want your user to logout, this is the function for you to use. After you call this function, server will invalid the access token for the login user.
+<div class="code_type_bar" to="user_logout"></div>
+<div class="ios" to="user_logout">
+    IBAction func clickLogout(_ sender: Any){
+        OVSKit.logout(){ (success, message) in
+            if success {
+                labStatus.text = &quot;successfully logout&quot;
+            }else{
+                labstatus.text = &quot;failed to logout. error:&quot; + message
+            }
+        }
+    }
+</div>
+<div class="android" to="user_logout">
+    Not Available Now
+</div></p>
+
+<h4 id="toc_12">▾ User Login</h4>
+
+<p>After you integrate our OVSKit library in your project. You can easily use our user login API directly by calling the api below. After that, you will get user login information in your web dashboard. At the same time, in the app, you will get a login user object.</p>
+
+<div class="code_type_bar" to="user_login"></div>
+<div class="ios" to="user_login">
+    IBAction func clickLogin(_ sender: Any){
+        OVSKit.login(username:txtUserName.text, password:txtPassword.text){ (success, message, user) in
+            if success {
+                labStatus.text = "successfully login"
+                labFirstName.text = user.firstName
+                labSecondName.text = user.secondName
+            }else{
+                labstatus.text = "failed to login. error:" + message
+            }
+        }
+    }
+</div>
+<div class="android" to="user_login">
+    Not Available Now
+</div>
+
+<h2 id="toc_13">APIs</h2>
+
+<h3 id="toc_14">OVSKit</h3>
+
+<p>This is the main class which is used to handle all the necessary logic between the service and mobile app</p>
+
+<h4 id="toc_15">Method</h4>
+
+<table>
+<thead>
+<tr>
+<th>Method Name</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>setAppKey(string)</td>
+<td style="text-align: left">register the app key to ovs server</td>
+</tr>
+<tr>
+<td>setAppKey(string, callback:(boolean isValid))</td>
+<td style="text-align: left">register the app key in ovs server and get the result of the validation</td>
+</tr>
+<tr>
+<td>setServerURL(string)</td>
+<td style="text-align: left">set up the server url for all the API request, if you don&#39;t use OVS Platform</td>
+</tr>
+<tr>
+<td>registerDevice()</td>
+<td style="text-align: left">collecting the current device information and send to server to register. If you enable Push Notification feature of app, you need to call this function at the very begininging of app. Moreover, all the configuration that user made in the web will be configurated in this code</td>
+</tr>
+<tr>
+<td>registerPushNotification()</td>
+<td style="text-align: left">this function trigger the push notification permission dialog and send push notification request to Apple/Google notification server</td>
+</tr>
+<tr>
+<td>preparePushNotification(deviceToken:data)</td>
+<td style="text-align: left">this handle the callback of the push notification device token</td>
+</tr>
+<tr>
+<td>showDeviceInfo()</td>
+<td style="text-align: left">list all the device information that OVSKit set up for debug purpose. If the app is release mode, this function will be automaitcally disabled.</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="toc_16">setAppKey(appKey)</h5>
+
+<p><code><span style="color:green"><strong>appKey:</strong></span> string | AppKey generated from OVS Dashboard </code><br>
+<code><span style="color:blue"><strong>return:</strong></span> void</code></p>
+
+<p>This will initialize the SDK with an App key. This function should be called when the app first launches. The App key can be obtained from the OVS Web Dashboard. For more details on how to obtain App key, please visit <a href="http://developer.openvs.org/faq/how-to-generate-app-key"> Generate App Key</a>. 
+<div class="code_type_bar" to="setAppKey_appKey"></div>
+<div class="ios" to="setAppKey_appKey">
+//set up your app key in the AppDelegate.swift file
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
+    OVSKit.setAppKey(&quot;&lt;your-ovs-app-key&gt;&quot;)
+    return true
+}
+</div>
+<div class="android" to="setAppKey_appKey">
+    Not Available Now
+</div></p>
+
+<hr>
+
+<h5 id="toc_17">setAppKey(appKey, callback:(boolean isValid))</h5>
+
+<p><code><span style="color:green"><strong>appKey:</strong></span> string | AppKey generated from OVS Dashboard </code> 
+<code><span style="color:green"><strong>callback:</strong></span> (boolean isValid) | callback function from ovs server, indicate the appKey is valid or not </code><br>
+<code><span style="color:blue"><strong>return:</strong></span> void</code></p>
+
+<p>This function is used to register an app key in the ovs server. It has the same functionality to the <em>setAppKey(appKey)</em>, the only difference is that, this function gives a callback function to let you know your app key is valid or not.
+<div class="code_type_bar" to="setAppKey_appKey_callback"></div>
+<div class="ios" to="setAppKey_appKey_callback">
+//set up your app key in the AppDelegate.swift file
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
+        OVSKit.setAppKey(&quot;&lt;your-ovs-app-key&gt;&quot;) { (isValid) in
+            //do something here to check the isValid flag
+        }
+    return true
+}
+</div>
+<div class="android" to="setAppKey_appKey_callback">
+    Not Available Now
+</div></p>
+
+<hr>
+
+<h5 id="toc_18">setServerURL(serverURL)</h5>
+
+<p><code><span style="color:green"><strong>serverURL:</strong></span> string | the API server url, where you want to point to. use the format: https://your.domain.com or https://your.ip.address </code> 
+<code><span style="color:blue"><strong>return:</strong></span> void</code></p>
+
+<p>This function helps you set up your server url. If you decide to use openvs platform, you don&#39;t need to change the server url. If you use our open source server code and set up your own server, you need to set up this server url to your server ip address or domain in AppDelegate.swift file in iOS.
+<div class="code_type_bar" to="setServerURL"></div>
+<div class="ios" to="setServerURL">
+//set up your app key in the AppDelegate.swift file
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
+        OVSKit.setAppKey(&quot;&lt;your-ovs-app-key&gt;&quot;) 
+        OVSKit.setServerURL(&quot;http://your.ip.address&quot;)
+        return true
+}
+</div>
+<div class="android" to="setServerURL">
+    Not Available Now
+</div></p>
+
+<hr>
+
+<h5 id="toc_19">registerDevice()</h5>
+
+<p><code><span style="color:blue"><strong>return:</strong></span> void</code></p>
+
+<p>This function is used to initialize the app based on the configuration from server. We highly recommend you to put this code in the didBecomeActive function of the AppDelegate file in iOS platform. So that everytime, when the app is active, you can get the update of the configuration. The configuration includes the flow control of the pages in the app, splash advertisements control and so on. If the app frequently go to background and return back to foreground. This function smartly decides the waiting duration in terms of sending the request to remote server. The duration for now is one minute. You can change it remotely in the server configuration.
+<div class="code_type_bar" to="registerDevice"></div>
+<div class="ios" to="registerDevice">
+//set up your app key in the AppDelegate.swift file
+func applicationDidBecomeActive(_ application: UIApplication) {
+    OVSKit.registerDevice()
+}
+</div>
+<div class="android" to="registerDevice">
+    Not Available Now
+</div></p>
+
+<hr>
+
+<h5 id="toc_20">registerPushNotification()</h5>
+
+<p><code><span style="color:blue"><strong>return:</strong></span> void</code></p>
+
+<p>if you want your app to receive push notification from server. You need to call this function when the app starts. There is no fixed place to put this function. But once you call this function, it will pop up a push notification dialog to require user&#39;s permission when the first time the user installs the app. Once you call this function, you are going to receive server remote push notification in the future. Moreover, this function can not stay alone. Whenever you call this function, you need to call <em>preparePushNotification(deviceToken:data)</em> function in AppDelegate as well. so that, the results of registering the push notification can comes back and we can get the push notification device token. After the first time you call this function, in the <em>showDeviceInfo()</em> function, you can see the push notification is not empty anymore.
+<div class="code_type_bar" to="registerPushNotification"></div>
+<div class="ios" to="registerPushNotification">
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
+        OVSKit.setAppKey(&quot;THIS-IS-A-DEV-APP-KEY&quot;)
+        OVSKit.registerPushNotification()
+        return true
+    }
+</div>
+<div class="android" to="registerPushNotification">
+    Not Available Now
+</div></p>
+
+<hr>
+
+<h5 id="toc_21">preparePushNotification(deviceToken:data)</h5>
+
+<p><code><span style="color:green"><strong>deviceToken:</strong></span> data | It is the binary format device token. Which is from <em>didRegisterForRemoteNotificationsWithDeviceToken</em> callback function</code> 
+<code><span style="color:blue"><strong>return:</strong></span> void</code></p>
+
+<p>This function brings the received device token and send to server for storing. It has be used in pair of the function * registerPushNotification*. Once this function gets called. you should find the registered device token in the web dashboard.
+<div class="code_type_bar" to="preparePushNotification"></div>
+<div class="ios" to="preparePushNotification">
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        OVSKit.preparePushNotification(deviceToken)
+    }
+</div>
+<div class="android" to="preparePushNotification">
+    Not Available Now
+</div></p>
+
+<hr>
+
+<h5 id="toc_22">showDeviceInfo()</h5>
+
+<p><code><span style="color:blue"><strong>return:</strong></span> void</code></p>
+
+<p>List all the device information for debug purpose. Before use this function, you have to provide a valid App Key. Otherwise, your funciton call will be failed. If the app is release mode, this function will be automaitcally disabled.
+<div class="code_type_bar" to="showDeviceInfo"></div>
+<div class="ios" to="showDeviceInfo">
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
+        OVSKit.setAppKey(&quot;THIS-IS-A-DEV-APP-KEY&quot;)
+        OVSKit.showDeviceInfo()
+        return true
+    }
+</div>
+<div class="android" to="showDeviceInfo">
+    Not Available Now
+</div></p>
+
+<p>Sample Device Info as below:</p>
+
+<pre>
+    <code>
+        App Key                 :THIS-IS-A-DEV-APP-KEY
+        Device AES Key          :P1kc]^[iV%W[)^BYTVGcshT4I]2%Fub}
+        Device AES IV           :Is3s-PNa6%rCCL(o
+        Device Identifier       :D76978F5-DD44-4409-BAAF-34C3EFC9B535
+        Device OS Version       :10.30
+        Device Model            :Simulator
+        Device Name             :No Name's MacBook Pro
+        Push Device Token       :
+        App Version             :1.0
+        App Build               :1
+        Language Code           :en
+        First Install Date      :1969-12-31 19:00:00 GMT-5
+        App Bundle Id           :com.openvs.app
+        Config Version          :1.00
+        OVSKit Version          :0.00
+        General AES Key         :$LUId&49jQVg]i(swJQGuP)$D7%tpx$0
+        General AES IV          :a6q%l&H%t&fQbd*X
+        Device Timezone         :Asia/Shanghai
+        Current App Mode        :DEBUG
+    </code>
+</pre>
+
+<hr>
+
+<h3 id="toc_23">OVSHelper</h3>
+
+<p>This class is used to offer some frequently used functions. So that, those functions can help us to facilitate our development process.</p>
+
+<h4 id="toc_24">Method</h4>
+
+<table>
+<thead>
+<tr>
+<th>Method Name</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>setAppKey(string)</td>
+<td style="text-align: left">register the app key to ovs server</td>
+</tr>
+<tr>
+<td>setAppKey(string, callback:(boolean isValid))</td>
+<td style="text-align: left">register the app key in ovs server and get the result of the validation</td>
+</tr>
+<tr>
+<td>setServerURL(string)</td>
+<td style="text-align: left">set up the server url for all the API request, if you don&#39;t use OVS Platform</td>
+</tr>
+<tr>
+<td>registerDevice()</td>
+<td style="text-align: left">collecting the current device information and send to server to register. If you enable Push Notification feature of app, you need to call this function at the very begininging of app. Moreover, all the configuration that user made in the web will be configurated in this code</td>
+</tr>
+<tr>
+<td>registerPushNotification()</td>
+<td style="text-align: left">this function trigger the push notification permission dialog and send push notification request to Apple/Google notification server</td>
+</tr>
+<tr>
+<td>preparePushNotification(deviceToken:data)</td>
+<td style="text-align: left">this handle the callback of the push notification device token</td>
+</tr>
+<tr>
+<td>showDeviceInfo()</td>
+<td style="text-align: left">list all the device information that OVSKit set up for debug purpose. If the app is release mode, this function will be automaitcally disabled.</td>
+</tr>
+</tbody>
+</table>
+
+<h5 id="toc_25">setAppKey(appKey)</h5>
+
+<p><code><span style="color:green"><strong>appKey:</strong></span> string | AppKey generated from OVS Dashboard </code><br>
+<code><span style="color:blue"><strong>return:</strong></span> void</code></p>
+
+<p>This will initialize the SDK with an App key. This function should be called when the app first launches. The App key can be obtained from the OVS Web Dashboard. For more details on how to obtain App key, please visit <a href="http://developer.openvs.org/faq/how-to-generate-app-key"> Generate App Key</a>. 
+<div class="code_type_bar" to="setAppKey_appKey"></div>
+<div class="ios" to="setAppKey_appKey">
+//set up your app key in the AppDelegate.swift file
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
+    OVSKit.setAppKey(&quot;&lt;your-ovs-app-key&gt;&quot;)
+    return true
+}
+</div>
+<div class="android" to="setAppKey_appKey">
+    Not Available Now
+</div></p>
+
+<hr>
+
+<h3 id="toc_26">OVSRequest</h3>
+
+<p>This class offers us a RESTFul based network request. By using this class, we can easily handle the access token in each request. Moreover, this class gives us some function to tracking the download progress of each request and help us manage the uploading progress of a file.</p>
+
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th style="text-align: left">Method</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>void</td>
+<td style="text-align: left">request(method: URLRequestMethod, url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make general HTTP network request to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">request1(method: URLRequestMethod, url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], security: RequestDataSecurity, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make general HTTP network request to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">requestV2(method: URLRequestMethod, url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], security: RequestDataSecurity, contentType: RequestContentType, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make general HTTP network request to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">requestV3(URLRequestMethod, url: String, params: [AnyHashable : Any], timeoutInterval: Double, isBodyParams: Bool, extraHeader: [AnyHashable : Any], security: RequestDataSecurity, contentType: RequestContentType, dispatchQueue: DispatchQueue, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make general HTTP network request to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">post(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method POST to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">postV1(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], security: RequestDataSecurity, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method POST to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">postV2(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], security: RequestDataSecurity, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method POST to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">postV3(url: String, params: [AnyHashable : Any], timeoutInterval: Double, isBodyParams: Bool, extraHeader: [AnyHashable : Any], security: RequestDataSecurity, contentType: RequestContentType, dispatchQueue: DispatchQueue, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method POST to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">get(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method GET to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">getV1(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method GET to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">getV2(url: String, params: [AnyHashable : Any], timeoutInterval: Double, isBodyParams: Bool, extraHeader: [AnyHashable : Any], contentType: RequestContentType, dispatchQueue: DispatchQueue, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method GET to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">put(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method PUT to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">putV1(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], security: RequestDataSecurity, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method PUT to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">putV2(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], security: RequestDataSecurity, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method PUT to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">putV3(url: String, params: [AnyHashable : Any], timeoutInterval: Double, isBodyParams: Bool, extraHeader: [AnyHashable : Any], security: RequestDataSecurity, contentType: RequestContentType, dispatchQueue: DispatchQueue, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method PUT to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">delete(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method DELETE to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">deleteV1(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], security: RequestDataSecurity, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method DELETE to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">deleteV2(url: String, params: [AnyHashable : Any], extraHeader: [AnyHashable : Any], security: RequestDataSecurity, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method DELETE to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">deleteV3(url: String, params: [AnyHashable : Any], timeoutInterval: Double, isBodyParams: Bool, extraHeader: [AnyHashable : Any], security: RequestDataSecurity, contentType: RequestContentType, dispatchQueue: DispatchQueue, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Make network request method DELETE to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">postData(url: String, params: [AnyHashable : Any], form: [MultipartFormDataParam], extraHeader: [AnyHashable : Any], onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Post multipart form data to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">postDataV1(url: String, params: [AnyHashable : Any], form: [MultipartFormDataParam], extraHeader: [AnyHashable : Any], security: RequestDataSecurity, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Post multipart form data to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">postDataV2(url: String, params: [AnyHashable : Any], form: [MultipartFormDataParam], extraHeader: [AnyHashable : Any], security: RequestDataSecurity, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Post multipart form data to server</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">postDataV3(url: String, params: [AnyHashable : Any], form: [MultipartFormDataParam], timeoutInterval: Double, isBodyParams: Bool, extraHeader: [AnyHashable : Any], security: RequestDataSecurity, dispatchQueue: DispatchQueue, forDownloading: Bool, uploadProgress: UploadingCallback, downloadProgress: DownloadingCallback, onRedirect: RedirectCallback, onSuccess: successCallback, onFailure: errorCallback</td>
+<td style="text-align: left">Post multipart form data to server</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_27">OVSRequest Examples</h4>
+
+<h5 id="toc_28">General HTTP Request, POST, PUT, DELETE, GET</h5>
+
+<div class="code_type_bar" to="request_req_examples"></div>
+<div class="ios" to="request_req_examples">
+OVSRequest.sharedInstance().request(URLRequestMethod.GET, "http://service.api.com/user", params: ["version":"1.0","content":"This is content"], extraHeader: nil, onSuccess: { (statusCode, data) in
+    if let results = data {
+        // process data here
+    }
+    completion?(false, nil, nil)
+}) { (errorCode, errorMessage, error) in
+    // process errors here
+    completion?(false, nil, nil)
+}
+</div>
+<div class="android" to="request_req_examples">
+new OVSRequest(RequestType.GET, "http://service.api.com/user", ["version":"1.0","content":"This is content"], nil, new MyCallbackInterface() {
+        @Override
+        public void onFinished(String result) {
+            // process result here
+        }})
+</div>
+
+<h5 id="toc_29">POST, GET, PUT, DELETE</h5>
+
+<div class="code_type_bar" to="request_post_example"></div>
+<div class="ios" to="request_post_example">
+OVSRequest.sharedInstance().post("http://service.api.com/user", params: ["version":"1.0","content":"This is content"], extraHeader: nil, onSuccess: { (statusCode, data) in
+    if let results = data {
+        // process data here
+    }
+    completion?(false, nil, nil)
+}) { (errorCode, errorMessage, error) in
+    // process errors here
+    completion?(false, nil, nil)
+}
+</div>
+<div class="android" to="request_post_example">
+new OVSRequestPost("http://service.api.com/user", ["version":"1.0","content":"This is content"], nil, new MyCallbackInterface() {
+        @Override
+        public void onFinished(String result) {
+            // process result here
+        }})
+new OVSRequestGet("http://service.api.com/user", ["version":"1.0","content":"This is content"], nil, new MyCallbackInterface() {
+        @Override
+        public void onFinished(String result) {
+            // process result here
+        }})
+...
+</div>
+
+<h5 id="toc_30">Post multipart form data</h5>
+
+<div class="code_type_bar" to="request_postmultipart_example"></div>
+<div class="ios" to="request_postmultipart_example">
+OVSRequest.sharedInstance().postdata("http://service.api.com/user", params: multipartFormDataParam, extraHeader: nil, onSuccess: { (statusCode, data) in
+    if let results = data {
+        // process data here
+    }
+    completion?(false, nil, nil)
+}) { (errorCode, errorMessage, error) in
+    // process errors here
+    completion?(false, nil, nil)
+}
+</div>
+<div class="android" to="request_postmultipart_example">
+new OVSRequestPostData("http://service.api.com/user", multipartFormDataParam, nil, new MyCallbackInterface() {
+        @Override
+        public void onFinished(String result) {
+            // process result here
+        }})
+</div>
+
+<h3 id="toc_31">OVSHelper</h3>
+
+<p>This class provides many general helper methods that help users to code faster.</p>
+
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th style="text-align: left">Method</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>String</td>
+<td style="text-align: left">urlEncoding(string: String)</td>
+<td style="text-align: left">Encode string url</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">urlDecoding(string: String)</td>
+<td style="text-align: left">Decode string url</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">getDocPath(fileNameOrPath: String)</td>
+<td style="text-align: left">Get full document path based on filename</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">getBldPath(fileName: String)</td>
+<td style="text-align: left">Get full bundle path based on filename</td>
+</tr>
+<tr>
+<td>UIColor</td>
+<td style="text-align: left">color(withHexString: String, alpha: Float)</td>
+<td style="text-align: left">Get RGBA color from Hex string and alpha value</td>
+</tr>
+<tr>
+<td>Data</td>
+<td style="text-align: left">data(fromJSONObject: [AnyHashable : Any])</td>
+<td style="text-align: left">Convert JSON dictionary object to Data object</td>
+</tr>
+<tr>
+<td>Data</td>
+<td style="text-align: left">data(fromJSONArray: [Any])</td>
+<td style="text-align: left">Convert JSON array to Data object</td>
+</tr>
+<tr>
+<td>NSMutableDictionary</td>
+<td style="text-align: left">object(fromJSONData: Data)</td>
+<td style="text-align: left">Convert Data object to JSON dictionary object</td>
+</tr>
+<tr>
+<td>NSMutableArray</td>
+<td style="text-align: left">array(fromJSONData: Data)</td>
+<td style="text-align: left">Convert JSON Data object to array</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">generateUUID()</td>
+<td style="text-align: left">Generate UUID</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">getDeviceModel()</td>
+<td style="text-align: left">Get the device&#39;s model name</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">getAppName()</td>
+<td style="text-align: left">Get application&#39;s name</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">getAppBuild()</td>
+<td style="text-align: left">Get application&#39;s build number</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">getAppVersion()</td>
+<td style="text-align: left">Get application&#39;s version number</td>
+</tr>
+<tr>
+<td>Double</td>
+<td style="text-align: left">firstInstallTimestamp()</td>
+<td style="text-align: left">Get timestamp of the application that was first installed in the device</td>
+</tr>
+<tr>
+<td>Bool</td>
+<td style="text-align: left">isProductionBuild()</td>
+<td style="text-align: left">Determine if installed application is production or development build</td>
+</tr>
+<tr>
+<td>Bool</td>
+<td style="text-align: left">createFolder(onPath: String)</td>
+<td style="text-align: left">Create folder with the path provided</td>
+</tr>
+<tr>
+<td>Bool</td>
+<td style="text-align: left">isFolderExisted(folderPath: String)</td>
+<td style="text-align: left">Check if folder path is existed</td>
+</tr>
+<tr>
+<td>Bool</td>
+<td style="text-align: left">isFileExisted(filePath: String)</td>
+<td style="text-align: left">Check if file is existed</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">getPushDeviceToken()</td>
+<td style="text-align: left">Get push notification device token</td>
+</tr>
+<tr>
+<td>UIImage</td>
+<td style="text-align: left">imageWithBorder(from: UIImage, withBorderColor: String, withBgColor: String)</td>
+<td style="text-align: left">Create new image with border and background color</td>
+</tr>
+<tr>
+<td>Double</td>
+<td style="text-align: left">getStringWidth(by: UIFont, for: String, padding: CGFloat</td>
+<td style="text-align: left">Get width of the string</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">alert(presenter: UIViewController, title: String, message: String, buttons: [Any], onCompletion: ((String?) -&gt; Void)</td>
+<td style="text-align: left">Display alert notification</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">getCurrencySymbol(symbol: OVSCurrencySymbol)</td>
+<td style="text-align: left">Get currency symbol</td>
+</tr>
+<tr>
+<td>Bool</td>
+<td style="text-align: left">fileExisted(inBundle: String)</td>
+<td style="text-align: left">Check if file exists in bundle</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_32">OVSHelper Examples</h4>
+
+<div class="code_type_bar_ios_only" to="helper_examples"></div>
+<div class="ios" to="helper_examples">
+let object = OVSHelper.sharedInstance().object(fromJSONData: data) as? [String:Any]
+let arr = OVSHelper.sharedInstance().array(fromJSONData: data) as? [[String:Any]]
+</div>
+
+<h3 id="toc_33">OVSDate</h3>
+
+<p>Some quick methods of handling the date time are in this class. By using this class, you can easily convert the UTC timestamp to some other timezone time.</p>
+
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th style="text-align: left">Method</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>String</td>
+<td style="text-align: left">getLocalHumanReadableDateTime()</td>
+<td style="text-align: left">Get current time in human readable form</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">getLocalHumanReadableDateTime(withFormat: String)</td>
+<td style="text-align: left">Get current time in specific format</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">convertToLocalYMdHms(fromUTCTimestamp: Double)</td>
+<td style="text-align: left">Convert UTC timestamp to default format</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">convertToLocal(fromUTCTimestamp: Double, format: String)</td>
+<td style="text-align: left">Convert UTC timestamp to specific format</td>
+</tr>
+<tr>
+<td>Date</td>
+<td style="text-align: left">convertToLocalDate(fromUTCTimestamp: Double)</td>
+<td style="text-align: left">Convert UTC timestamp to Date object</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">convertToLocalYMdHms(fromUTCTimestamp: Double, withTimezone: String)</td>
+<td style="text-align: left">Convert UTC timestamp with timezone to default format</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">convertToLocal(fromUTCTimestamp: Double, format: String, withTimezone: String)</td>
+<td style="text-align: left">Convert UTC timestamp with timezone to specific format</td>
+</tr>
+<tr>
+<td>Date</td>
+<td style="text-align: left">convertToLocalDate(fromUTCTimestamp: Double, withTimezone: String)</td>
+<td style="text-align: left">Convert UTC timestamp with timezone to Date object</td>
+</tr>
+<tr>
+<td>Date</td>
+<td style="text-align: left">convertLocalToUTC()</td>
+<td style="text-align: left">Convert current local time to UTC</td>
+</tr>
+<tr>
+<td>Double</td>
+<td style="text-align: left">convertLocalToUTCTimestamp()</td>
+<td style="text-align: left">Convert current local time to UTC timestamp</td>
+</tr>
+<tr>
+<td>Date</td>
+<td style="text-align: left">convertToUTC(fromTimezoneDate: Date)</td>
+<td style="text-align: left">Convert Date object to UTC</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">dumpSystemTimezone()</td>
+<td style="text-align: left">Get system timezone</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_34">OVSDate Examples</h4>
+
+<div class="code_type_bar" to="date_examples"></div>
+<div class="ios" to="date_examples">
+let timeString = OVSDate.sharedInstance().convertToLocal(fromUTCTimestamp: 923489472, format: "Y-m-d h:m:s")
+let dateObject = OVSDate.sharedInstance().convertToLocalDate(fromUTCTimestamp: 923489472, withTimezone: TimeZone.current.identifier)
+</div>
+<div class="android" to="date_examples">
+String timeString = OVSDate.sharedInstance().convertToLocal(923489472, "Y-m-d h:m:s")
+Date dateObject = OVSDate.sharedInstance().convertToLocalDate(923489472, TimeZone.current.identifier)
+</div>
+
+<h3 id="toc_35">OVSLog</h3>
+
+<p>OVSLog provides some key methods to efficiently create loggings with different severity levels.</p>
+
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th style="text-align: left">Method</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>void</td>
+<td style="text-align: left">log(type: OVSLogType, info: String)</td>
+<td style="text-align: left">Log string message with severity level</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">log(type: OVSLogType, info: String, params: [AnyHashable : Any])</td>
+<td style="text-align: left">Log string message and params with severity level</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">getHumanReadableSystemLog()</td>
+<td style="text-align: left">Retrieve system log in human readable format</td>
+</tr>
+<tr>
+<td>void</td>
+<td style="text-align: left">flushLog2Disk(completion: ((Bool, String?) -&gt; Void))</td>
+<td style="text-align: left">Flush current log buffer to disk with callback available</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_36">OVSLogType</h4>
+
+<p>Log severity levels</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">Severity</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">LogLevelNormal</td>
+</tr>
+<tr>
+<td style="text-align: left">LogLevelWarning</td>
+</tr>
+<tr>
+<td style="text-align: left">LogLevelError</td>
+</tr>
+<tr>
+<td style="text-align: left">LogLevelCrash</td>
+</tr>
+<tr>
+<td style="text-align: left">LogLevelDetails</td>
+</tr>
+<tr>
+<td style="text-align: left">LogLevelTracking</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_37">OVSLog Examples</h4>
+
+<div class="code_type_bar_ios_only" to="log_examples"></div>
+<div class="ios" to="log_examples">
+OVSLog.sharedInstance().log(type: OVSLogType.LogLevelWarning, info: "This is a warning log")
+</div>
+<div class="android" to="log_examples">
+OVSLog.sharedInstance().log(OVSLogType.LogLevelWarning, "This is a warning log")
+</div>
+
+<h3 id="toc_38">OVSDataManager</h3>
+
+<p>OVSDataManager provides many data processing methods such as compression, encryption, and security keys generation.</p>
+
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th style="text-align: left">Method</th>
+<th style="text-align: left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Data</td>
+<td style="text-align: left">zlibInflate(data: Data)</td>
+<td style="text-align: left">Returns a data object containing a Zlib decompressed copy of the receivers contents</td>
+</tr>
+<tr>
+<td>Data</td>
+<td style="text-align: left">zlibDeflate(data: Data)</td>
+<td style="text-align: left">Returns a data object containing a Zlib compressed copy of the receivers contents</td>
+</tr>
+<tr>
+<td>Data</td>
+<td style="text-align: left">gzipInflate(data: Data)</td>
+<td style="text-align: left">Returns a data object containing a Gzip decompressed copy of the receivers contents</td>
+</tr>
+<tr>
+<td>Data</td>
+<td style="text-align: left">gzipDeflate(data: Data)</td>
+<td style="text-align: left">Returns a data object containing a Gzip compressed copy of the receivers contents</td>
+</tr>
+<tr>
+<td>Data</td>
+<td style="text-align: left">generalKeyPairEncryption(for: Data)</td>
+<td style="text-align: left">Encrypt data based on the preset general Key and IV</td>
+</tr>
+<tr>
+<td>Data</td>
+<td style="text-align: left">generalKeyPairDecryption(for: Data)</td>
+<td style="text-align: left">Decrypt data based on the preset general Key and IV</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">generalKeyPairEncryption(forText: String)</td>
+<td style="text-align: left">Encrypt string based on the preset general Key and IV</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">generalKeyPairDecryption(forText: String)</td>
+<td style="text-align: left">Decrypt string based on the preset general Key and IV</td>
+</tr>
+<tr>
+<td>Data</td>
+<td style="text-align: left">encryptData(original: Data)</td>
+<td style="text-align: left">Encrypt data based on the individual device&#39;s Key and IV</td>
+</tr>
+<tr>
+<td>Data</td>
+<td style="text-align: left">decryptData(encryptedData: Data)</td>
+<td style="text-align: left">Decrypt data based on the individual device&#39;s Key and IV</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">encryptText(plainText: String)</td>
+<td style="text-align: left">Encrypt string based on the individual device&#39;s Key and IV</td>
+</tr>
+<tr>
+<td>String</td>
+<td style="text-align: left">decryptText(encryptedText: String)</td>
+<td style="text-align: left">Decrypt string based on the individual device&#39;s Key and IV</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_39">OVSDataManager Examples</h4>
+
+<h5 id="toc_40">Data encryption and decryption</h5>
+
+<div class="code_type_bar" to="encryption_examples"></div>
+<div class="ios" to="encryption_examples">
+let image = UIImage(named:"test_image.jpeg")
+
+// Encryption
+let cryptor:OVSDataManager = OVSDataManager()
+let imageData = UIImageJPEGRepresentation(image!, 1)
+let encryptedData = cryptor.generalKeyPairEncryption(forData:imageData)
+saveImageDocumentDirectory(imageData: encryptedData)
+
+// Decryption
+let decryptedData = cryptor.generalKeyPairDecryption(forData:encryptedData)
+let decryptedImage = UIImage(data: decryptedData!)
+</div>
+<div class="android" to="encryption_examples">
+Bitmap image = BitmapFactory.decodeResource(this.getResources(), R.drawable.my_image);
+
+// Encryption
+OVSDataManager dataManager = new OVSDataManager()
+ByteArrayOutputStream stream = new ByteArrayOutputStream();
+image(Bitmap.CompressFormat.JPEG, 100, stream);
+byte[] byteArray = stream.toByteArray();
+byte[] encryptedData = dataManager.generalKeyPairEncryption(byteArray)
+
+// Decryption
+byte[] decryptedData = dataManager.generalKeyPairDecryption(forData:encryptedData)
+Bitmap bitmap = BitmapFactory.decodeByteArray(decryptedData , 0, decryptedData.length);
+</div>
+
+<h2 id="toc_41">Questions &amp; Answers</h2>
+
+<h3 id="toc_42">Frequently Asks</h3>
+
+<h5 id="toc_43">◘ Where can I get the source code?</h5>
+
+<blockquote>
+<p>After you register an account in OpenVS.org, then you can find the source code (server, ios, android) in the application information page. If you didn&#39;t create an application in OpenVS.org. you can not find the source code. Moreover, each application has an AppKey after you successfully create one. please use that AppKey in your project. Otherwise, your project won&#39;t work. We make our project open source and forever free. But we need you to set App Key so that we can guarantee we have monitor of our distributed code to avoid some people amuse our source code.</p>
+</blockquote>
+
+<h5 id="toc_44">◘ Do I need to pay for OVS service, what is the price?</h5>
+
+<blockquote>
+<p>OpenVS (OVS) is open source and forever free. We won&#39;t charge you any fee if you set up your own server and manage the server and source code yourself. However, if you decide to use our OpenVS Management Platform (OpenVS Platform) to control and maintain your app. We have several package for you. The basic package is free for everyone, you can find the detailed information in this link: <a href='https://www.openvs.org/price'>https://www.openvs.org/price</a></p>
+</blockquote>
+
+<h5 id="toc_45">◘ Where can I get the technical support in terms of using OVS?</h5>
+
+<blockquote>
+<p>We have support email and forum for you to find your answer and questions. Everytime, you can search our forum for your issue or problems. If you can not find the answer, you can send a support email to us, We will reply you within 24 hours. Our forum is in this link: <a href='https://www.openvs.org/forum'>https://www.openvs.org/forum</a></p>
+</blockquote>
+
+<h5 id="toc_46">◘ Can I modify the source code of OVS and release to my client?</h5>
+
+<blockquote>
+<p>Yes, feel free to modify the source code and release the product which build by modified version of OVS to your client. We won&#39;t charge you anything from your final product and we won&#39;t charge you the fee for your commerial use. However, you can not sells or distribute your modified version of the source code to others, except us. That is to say, you can modify the source code for building up your product. You CAN NOT modify the source code and distribute the modified version as a commerial product.</p>
+</blockquote>
+
+<h5 id="toc_47">◘ Do I need to open source after I modify OVS source code?</h5>
+
+<blockquote>
+<p>No, you don&#39;t need to open source your modified version of OVS source code. And you are not permitted by us to open source your modified version as well. We have the right to let you share the source code with us if we want to check your modified version. However, you always own the copyright of your modified part of your OVS source code.</p>
+</blockquote>
+
+<h5 id="toc_48">◘ What is the difference between the paid version and free version</h5>
+
+<blockquote>
+<p>There is no functionalities difference between the paid version and free version. The only differences are that:<br>
+[1] paid version supports data encryption between server and mobile app<br>
+[2] paid version supports data/user personal information encryption in database<br>
+[3] paid version provides 7/24 running server to you<br>
+[4] paid version allows you have online payment service<br>
+[5] paid version allows you manage more than one apps in the web dashboard</p>
+</blockquote>
+
+<h3 id="toc_49">Submit a question</h3>
+
+<p>if you have some questions which are not listed in the <em>Frequently Asks</em> section. Please send us an email (support@openvs.org) and describe your question. We will try our best to reply you within 7/24. Once your questions are very useful to us. We are going to list your questions and name as a contributor in our <em>Frequently Asks</em> section.</p>
+
+
+
+
+</body>
+
+</html>

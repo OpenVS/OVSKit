@@ -1,6 +1,6 @@
 {
   "name": "OVSKit",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "summary": "OVSKit offers a bunch of useful functions to facilitate developer work",
   "description": "OVSKit offers a bunch of useful functions to facilitate developer work. Such as Network Request, Encryption/Decryption, Log and so on",
   "homepage": "https://github.com/OpenVS/OVSKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/OpenVS/OVSKit.git",
-    "tag": "0.0.1"
+    "tag": "0.0.5"
   },
   "platforms": {
     "ios": "10.0"
