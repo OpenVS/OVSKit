@@ -1,5 +1,5 @@
 PODS:
-  - OVSKit (0.0.5)
+  - OVSKit (0.0.6)
 
 DEPENDENCIES:
   - OVSKit (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  OVSKit: df561156b32f7035f7bca835c2e76eb6176f8c8d
+  OVSKit: e10aa96a113ad2bfe786f96addf2db079cfc64bf
 
 PODFILE CHECKSUM: 4c8467662ddc1a14b56068c6d7cad10f6b73bc5d
 

@@ -38,8 +38,11 @@ typedef NS_ENUM(NSUInteger, OVSLogType) {
 ///this log funciton accepts the parameters of the log, normally it is used to the user events
 -(void)log:(OVSLogType)type info:(NSString *)info params:(NSDictionary *)params;
 
-///this function return a human reabable log
+/// this function return a human readable log
 -(NSString *)getHumanReadableSystemLog;
+	
+/// this function return a pretty human readable log
+-(NSString *)getPrettyHumanReadableSystemLog;
 
 /** this function will flush the in memory log information to disk, so that, we can permanently save it.
  * if the function finish flushing the data to the disk, completion callback function will be called.
