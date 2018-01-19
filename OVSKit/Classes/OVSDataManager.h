@@ -253,4 +253,7 @@
 
 /// get ovs kit version for security purpose
 -(float)getOpenVSKitVersion;
+	
+/// get general key and iv version. this is used to let the OVSApp know which version of the Key and IV, will be used.
+-(NSString * _Nonnull)generalAESKeyIVVersion;
 @end
