@@ -10,9 +10,9 @@
 #import "OVSDate.h"
 
 
-#define log4OVS(logLevel,logInfo) ([[OVSLog sharedInstance] log:(logLevel) info:([NSString stringWithFormat:@"%s\n%s (+%d)\n:%@\n",__FILE__,__PRETTY_FUNCTION__,__LINE__,(logInfo)])])
+#define log4OVS(logLevel,logInfo) ([[OVSLog sharedInstance] log:(logLevel) info:([NSString stringWithFormat:@"%s (+%d)\n:%@\n",__PRETTY_FUNCTION__,__LINE__,(logInfo)])])
 
-#define log4OVSx(logLevel,logInfo,logParams) ([[OVSLog sharedInstance] log:(logLevel) info:([NSString stringWithFormat:@"%s\n%s (+%d)\n:%@\n",__FILE__,__PRETTY_FUNCTION__,__LINE__,(logInfo)]) params:(logParams)])
+#define log4OVSx(logLevel,logInfo,logParams) ([[OVSLog sharedInstance] log:(logLevel) info:([NSString stringWithFormat:@"%s (+%d)\n:%@\n",__PRETTY_FUNCTION__,__LINE__,(logInfo)]) params:(logParams)])
 
 typedef NS_ENUM(NSUInteger, OVSLogType) {
 	LogLevelCrash,
