@@ -70,4 +70,21 @@
  */
 +(NSData * _Nonnull)toOriginalDataByGeneralKey:(NSData * _Nonnull)safeData;
 
+
+
+/**
+ @brief convert the original string to ovs used and communicated encrypted string.
+ @param originalString string.
+ @return return encrypted data by device key/iv
+ */
++(NSString * _Nonnull)toOVSSafeString:(NSString * _Nullable) originalString;
+
+
+/**
+ @brief convert the original string to ovs used and communicated encrypted string by using general key/iv
+ @param originalString string.
+ @return return encrypted data by general key/iv
+ */
++(NSString * _Nonnull)toOVSSafeStringWithGeneralKey:(NSString * _Nullable) originalString;
+ 
 @end

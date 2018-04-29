@@ -19,8 +19,6 @@
 
 +(OVSConfig * _Nonnull)sharedInstance;
 
-///this function is used to register the device information and get the configuration file for the app.
--(void)registerDeviceForConfig;
 
 ///get current device iformation in Dictionary
 -(NSDictionary * _Nonnull)getDeviceInfo;
@@ -34,7 +32,7 @@
  @param appKey it is the unique key to identify your app. you can get it from developer.openvs.org website
  @param completion indicates the app key is valid or not from ovs server. it returns a BOOL value to indicate is valid or not
  */
--(void)registerAppKey:(NSString * _Nonnull)appKey onCompletion:(void(^_Nullable)(BOOL isValid))completion;
+-(void)registerAppKey:(NSString * _Nonnull)appKey onCompletion:(void(^_Nullable)(BOOL isValid, NSString * message, double expiredDate))completion;
 
 
 /**
