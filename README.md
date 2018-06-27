@@ -31,4 +31,16 @@ end
    - Clean useless class and files 
 
 
+## Common Issues
+* if you meet the issue that can not make pod install. and get the error message as below
+```
+RuntimeError - [Xcodeproj] Unknown object version
+```
+Please update your gem and cocopod as below:
+```
+1. $> bundle update
+2. $> sudo gem install cocoapods --pre
+```
+
+
 If you want to get more detailed information, please visit: http://www.openvs.org
