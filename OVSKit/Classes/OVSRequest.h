@@ -15,7 +15,8 @@ typedef NS_ENUM(NSInteger, RequestDataSecurity) {
 	RequestDataSecurity_DeviceKey,
 	RequestDataSecurity_GeneralKey,
 	RequestDataSecurity_OVS_DeviceKey,
-	RequestDataSecuirty_OVS_GeneralKey
+	RequestDataSecurity_OVS_GeneralKey
+	
 };
 
 ///define the url request method.

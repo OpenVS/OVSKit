@@ -18,6 +18,7 @@
  @return return processed safe text from the original text
  */
 +(NSString * _Nonnull)generalKeyForSafeStringFromOriginal:(NSString * _Nonnull)original;
++(NSString * _Nonnull)generalKeyForOVSSafeStringFromOriginal:(NSString * _Nonnull)original;
 
 /**
  @brief convert the safe string to original string via general key
@@ -25,6 +26,7 @@
  @return return original text
  */
 +(NSString * _Nonnull)generalKeyForOriginalStringFromSafeString:(NSString * _Nonnull)safeString;
++(NSString * _Nonnull)generalKeyForOVSOriginalStringFromSafeString:(NSString * _Nonnull)safeString;
 
 /**
  @brief convert the original string to safe string.
@@ -32,6 +34,7 @@
  @return return processed safe text from the original text
  */
 +(NSString * _Nonnull)toSafeString:(NSString * _Nonnull)original;
++(NSString * _Nonnull)toOVSSafeString:(NSString * _Nonnull)original;
 
 /**
  @brief convert the safe string to original string.
@@ -39,6 +42,7 @@
  @return return original text
  */
 +(NSString * _Nonnull)toOriginalString:(NSString * _Nonnull)safeString;
++(NSString * _Nonnull)toOVSOriginalString:(NSString * _Nonnull)safeString;
 
 /**
  @brief convert the original data to safe data.
@@ -46,6 +50,7 @@
  @return processed safe data from the original data
  */
 +(NSData * _Nonnull)toSafeData:(NSData * _Nonnull)original;
++(NSData * _Nonnull)toOVSSafeData:(NSData * _Nonnull)original;
 
 
 /**
@@ -54,6 +59,7 @@
  @return return original data
  */
 +(NSData * _Nonnull)toOriginalData:(NSData * _Nonnull)safeData;
++(NSData * _Nonnull)toOVSOriginalData:(NSData * _Nonnull)safeData;
 
 /**
  @brief convert the original data to safe data by general key.
@@ -61,6 +67,7 @@
  @return processed safe data from the original data
  */
 +(NSData * _Nonnull)toSafeDataByGeneralKey:(NSData * _Nonnull)original;
++(NSData * _Nonnull)toOVSSafeDataByGeneralKey:(NSData * _Nonnull)original;
 
 
 /**
@@ -69,22 +76,6 @@
  @return return original data
  */
 +(NSData * _Nonnull)toOriginalDataByGeneralKey:(NSData * _Nonnull)safeData;
++(NSData * _Nonnull)toOVSOriginalDataByGeneralKey:(NSData * _Nonnull)safeData;
 
-
-
-/**
- @brief convert the original string to ovs used and communicated encrypted string.
- @param originalString string.
- @return return encrypted data by device key/iv
- */
-+(NSString * _Nonnull)toOVSSafeString:(NSString * _Nullable) originalString;
-
-
-/**
- @brief convert the original string to ovs used and communicated encrypted string by using general key/iv
- @param originalString string.
- @return return encrypted data by general key/iv
- */
-+(NSString * _Nonnull)toOVSSafeStringWithGeneralKey:(NSString * _Nullable) originalString;
- 
 @end

@@ -45,6 +45,7 @@ typedef NS_ENUM(NSUInteger, OVSCurrencySymbol) {
 -(NSString *_Nonnull)getAppVersion;
 -(NSString *_Nonnull)getAppBuild;
 -(NSString *_Nonnull)getAppName;
+-(NSString * _Nonnull)deviceIdentifier;
 
 -(double)firstInstallTimestamp;
 
@@ -72,7 +73,7 @@ typedef NS_ENUM(NSUInteger, OVSCurrencySymbol) {
 
 /** this function get a pop up dialog to alert user
  @brief this is a quick way to pop up a dialog to let the user response.
- @param presenter is the view controller which wants to pop up the dialog
+ @param presenter the parent view controller which will present the alert
  @param title this is the title of the pop up
  @param message this is the content of the pop up dialog
  @param buttons this is an array of buttons, that you want to let the user to confirm
@@ -81,11 +82,14 @@ typedef NS_ENUM(NSUInteger, OVSCurrencySymbol) {
 -(void)alert:(UIViewController * _Nonnull)presenter title:(NSString * _Nullable)title message:(NSString * _Nullable)message buttons:(NSArray*_Nullable)buttons onCompletion:(void(^_Nullable)(NSString * _Nullable responseButton))completion;
 
 
-
 ///get currency symbol
 -(NSString * _Nonnull)getCurrencySymbol:(OVSCurrencySymbol)symbol;
 
 
 ///this function is used to check whether a file is existed in bundle
 -(BOOL)fileExistedInBundle:(NSString * _Nonnull)fileName;
+
+/// This function returns a md5 string from the original string
+-(NSString * _Nonnull)MD5:(NSString *)original;
+
 @end
